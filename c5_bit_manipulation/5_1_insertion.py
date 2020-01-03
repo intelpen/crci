@@ -11,6 +11,7 @@
 #Solution - injection here means that M overrides a part of N, with eventually filling with 0s if needed
 
 from c5_bit_manipulation.general_bit_manipulation_in_python import binary
+
 def insertion(n: int, m:int, i:int, j:int) -> int:
     int_len = 32
     length_insertion = j-i
