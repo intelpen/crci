@@ -5,3 +5,17 @@
 # EXAMPLE
 # Input: {5, 3, 1, 2, 3}
 # Output: {5, 1, 3, 2, 3}
+from typing import List
+
+def peak_and_valleys(data: List[int]) -> None:
+    data.sort()
+    for i in range(1, len(data)-1, 1):
+        if data[i-1] < data[i] and (data[i] < data[i+1]):
+            aux = data[i]
+            data[i] = data[i+1]
+            data[i+1] = aux
+
+my_list: List[int] = [5,3,3,1,2,3]
+print(my_list)
+peak_and_valleys(my_list)
+print(my_list)

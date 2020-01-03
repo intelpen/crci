@@ -12,3 +12,32 @@
 
 # Solution - Brute Force - keep a sorted array of distinct numbers - high insert complexity
 # Alternative - keep a Binary Search Tree which also keep the counts of "how many smaller" and updates on insert
+
+#Brute force solution
+import random
+from c10_sorting_and_searching.binary_search import binary_search
+
+class TrackedStreamBruteForce(object):
+    def __init__(self):
+        self.data = []
+
+    def track(self, new_element: int) -> None:
+        self.data.append(new_element)
+        self.data.sort()
+
+    def get_rank(self, element: int) -> int:
+        rank: int = binary_search(self.data, element)
+        return rank
+
+my_list = [random.randint(0,200) for x in range(100000)]
+
+#my_list = [1,2,3,4,5,6,7,8]*1000000
+my_int_stream = (x for x in my_list)
+
+tracked_stream = TrackedStreamBruteForce()
+for element in my_int_stream:
+    tracked_stream.track(element)
+    #print(f"element: {element} - position: {tracked_stream.get_rank(element)}")
+
+print(len(my_list))
+print(len(tracked_stream.data))

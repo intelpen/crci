@@ -3,7 +3,7 @@
 
 # Solution: start from the end  and have two running indexes in A and B
 
-def merge_sorted(a, b, l_a, l_b):
+def merge_sorted(a: list, b: list, l_a:int, l_b:int) -> None:
     current = l_a + l_b + 1
     while (l_a >=0) and (l_b >= 0):
         if a[l_a] > b[l_b]:
