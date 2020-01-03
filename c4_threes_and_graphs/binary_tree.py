@@ -1,3 +1,5 @@
+# BinaryTree property all_left < node < all_right
+
 class BTreeNode(object):
     def __init__(self, data, left=None, right=None):
         self.data = data
@@ -10,3 +12,5 @@ def in_order_traversal(node):
         in_order_traversal(node.left)
         visit(node)
         in_order_traversal(node.roght)
+
+#S
