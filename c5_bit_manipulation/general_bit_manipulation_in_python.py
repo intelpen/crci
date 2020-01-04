@@ -1,9 +1,11 @@
-# Convert byte_string to int with base
-print(int("10101",2))
-#Write from 0b1010
-print(0b1010)
-#Encoding of integers
+def general_usage_binary():
+    # Convert byte_string to int with base
+    print(int("10101",2))
+    #Write from 0b1010
+    print(0b1010)
+
 def get_bit(n, position):
+    # Encoding of integers
     return (n & (1<<position)) >> position
 
 def binary(n:int, length: int = 32):
@@ -13,17 +15,20 @@ def binary(n:int, length: int = 32):
         length -=1
     return bits
 
-#positive - normal encoding
-#negative - 2 complement variant
-print(binary(2))
-print(binary(-2))
-print(get_bit(2,0))
+def test_encoding():
+    # positive - normal encoding
+    # negative - 2 complement variant
 
-#get the number of bits
-print(int.bit_length(3))
-#Write in binary form : bin
-for i in range(-10,10,1):
-    print(bin(i), binary(i,length =8))
+    print(binary(2))
+    print(binary(-2))
+    print(get_bit(2,0))
+    # Write in binary form : bin
+    for i in range(-10, 10, 1):
+        print(bin(i), binary(i, length=8))
+
+    # get the number of bits
+    print(int.bit_length(3))
+
 
 # In python a negative number when shifted stays negative  - we have what is called arithmetic right shift as the sign
 # bit is always filed
